@@ -9,7 +9,7 @@
   <login-buttons></login-buttons>
 
   <form class="new-post" ng-submit="$ctrl.addpost($ctrl.newpost)" ng-show="$ctrl.currentUser">
-    <input ng-model="$ctrl.newpost" type="text" name="text" placeholder="Type to add new post"/>
+    <textarea rows="5"ng-model="$ctrl.newpost" type="text" name="text" placeholder="Type to add new post"></textarea>
   </form>
   
 </header>
