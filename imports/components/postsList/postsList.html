@@ -18,8 +18,10 @@
 
 <ul>
 <li ng-repeat="post in $ctrl.posts" ng-class="{'checked': post.checked, 'private': post.private}">
-    <button class="delete" ng-click="$ctrl.removepost(post)">&times;</button>
+    <button class="delete" ng-click="$ctrl.removepost(post)" ng-show="post.owner === $ctrl.currentUser._id">Delete</button>
+
     <label>{{post.checked == true ? "Read" : "Unread"}}</label>
+
     <input type="checkbox" ng-checked="post.checked" ng-click="$ctrl.setChecked(post)" class="toggle-checked"/>
 
     <span class="text">
