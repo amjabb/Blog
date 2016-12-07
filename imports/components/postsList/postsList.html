@@ -10,7 +10,8 @@
 
   <form class="new-post" ng-show="$ctrl.currentUser">
     <textarea rows="5" ng-model="$ctrl.newpost" type="text" name="text" placeholder="Type to add new post"></textarea>
-    <button class="Enter" ng-click="$ctrl.addpost($ctrl.newpost)">Post</button>
+    <!-- <button class="Enter" ng-click="$ctrl.addpost($ctrl.newpost)">Post</button> -->
+    <a href="#" class="myButton" ng-click="$ctrl.addpost($ctrl.newpost)">Post</a>
   </form>
   
 </header>
@@ -18,7 +19,7 @@
 <ul>
 <li ng-repeat="post in $ctrl.posts" ng-class="{'checked': post.checked, 'private': post.private}">
     <button class="delete" ng-click="$ctrl.removepost(post)">&times;</button>
-
+    <label>{{post.checked == true ? "Read" : "Unread"}}</label>
     <input type="checkbox" ng-checked="post.checked" ng-click="$ctrl.setChecked(post)" class="toggle-checked"/>
 
     <span class="text">
@@ -28,3 +29,4 @@
       {{post.private == true ? "Private" : "Public"}}
     </button>
 </ul>
+
