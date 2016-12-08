@@ -25,10 +25,12 @@
     <input type="checkbox" ng-checked="post.checked" ng-click="$ctrl.setChecked(post)" class="toggle-checked"/>
 
     <span class="text">
-      <strong>{{post.username}}</strong> - {{post.text}}
+      <strong>{{post.username}}</strong> {{post.createdAt.toString().substring(0,25)}} - {{post.text}}
     </span>
     <button class="toggle-private" ng-click="$ctrl.setPrivate(post)" ng-show="post.owner === $ctrl.currentUser._id">
       {{post.private == true ? "Private" : "Public"}}
     </button>
 </ul>
+
+<img src="img/dailylife.jpeg" width="700" height="500" alt="submit"/>
 
